@@ -10,7 +10,7 @@
     --card-bg: #1e293b;
     --nav-border: rgba(56, 189, 248, 0.3);
     --transition-speed: 0.3s;
-    --nav-height: 60px;
+    --nav-height: 56px;
 }
 
 body.light-mode {
@@ -192,8 +192,6 @@ h1, h2, h3, p, span, a {
     max-width: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
 }
 
 .service-card p { color: var(--text-dim); }
@@ -220,9 +218,9 @@ h1, h2, h3, p, span, a {
 
 .project-footer {
     margin-top: auto;
+    padding-top: 25px;
     display: flex;
     justify-content: flex-start;
-    padding-top: 25px;
 }
 
 .badge {
@@ -406,13 +404,8 @@ h1, h2, h3, p, span, a {
     font-size: 0.95rem;
 }
 
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 12px;
-}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 12px; }
 
 .footer-col ul li a {
     text-decoration: none;
@@ -486,14 +479,13 @@ h1, h2, h3, p, span, a {
 }
 
 /* ============================================
-   14. RESPONSIVE — TABLET (max 900px)
+   14. TABLET (max-width: 900px)
    ============================================ */
 @media (max-width: 900px) {
     .hero {
         flex-direction: column-reverse;
         text-align: center;
         padding-top: 150px;
-        min-height: 100vh;
     }
 
     .hero-btns, .social-links {
@@ -520,40 +512,44 @@ h1, h2, h3, p, span, a {
 }
 
 /* ============================================
-   15. RESPONSIVE — MOBILE (max 700px)
+   15. MOBILE (max-width: 700px)
    ============================================ */
 @media (max-width: 700px) {
+
     body {
-        padding-top: var(--nav-height);
-        overflow-x: hidden;
+        padding-top: var(--nav-height) !important;
     }
 
-    /* Nav stretches full width, flush to top */
     .capsule-nav {
-        top: 0;
-        left: 0;
-        right: 0;
-        transform: none;
-        width: 100%;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
+        width: 100% !important;
     }
 
     .nav-container {
-        border-radius: 0;
+        border-radius: 0 !important;
         border-left: none;
         border-right: none;
         border-top: none;
-        padding: 6px 12px;
+        padding: 10px 16px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
     }
 
-    /* Hero — force-override the 900px rule above */
+    /* THE KEY FIX — override the 100vh and all padding from desktop + tablet */
     .hero {
-        padding-top: 20px !important;
-        padding-bottom: 40px !important;
         min-height: 0 !important;
         height: auto !important;
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 20px;
+        padding-top: 24px !important;
+        padding-bottom: 40px !important;
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        flex-direction: column-reverse !important;
+        text-align: center !important;
+        gap: 24px !important;
     }
 
     .hero-btns, .social-links {
@@ -561,20 +557,30 @@ h1, h2, h3, p, span, a {
     }
 
     .hero-description {
-        margin: 0 auto 30px auto;
+        margin: 0 auto 20px auto;
     }
 
-    /* Inner pages */
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .job-title {
+        font-size: 2.4rem;
+    }
+
+    .intro-text {
+        font-size: 1.3rem;
+    }
+
     .page-container {
-        padding-top: 30px;
+        padding-top: 24px !important;
     }
 
-    /* Hamburger */
     #hamburger {
-        display: flex;
+        display: flex !important;
     }
 
-    /* Nav links dropdown */
     #nav-links {
         display: none;
         position: absolute;
@@ -583,12 +589,13 @@ h1, h2, h3, p, span, a {
         width: 100%;
         background: var(--nav-bg);
         flex-direction: column;
-        padding: 16px;
+        padding: 12px 16px;
         border-bottom: 1px solid var(--nav-border);
+        gap: 4px;
     }
 
     #nav-links.open {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-item {
@@ -598,20 +605,5 @@ h1, h2, h3, p, span, a {
 
     .theme-btn {
         padding: 0 8px;
-    }
-
-    /* Profile image smaller on mobile */
-    .profile-img {
-        width: 220px;
-        height: 220px;
-    }
-
-    /* Job title scales down */
-    .job-title {
-        font-size: 2.2rem;
-    }
-
-    .intro-text {
-        font-size: 1.3rem;
     }
 }
