@@ -493,6 +493,7 @@ h1, h2, h3, p, span, a {
         flex-direction: column-reverse;
         text-align: center;
         padding-top: 150px;
+        min-height: 100vh;
     }
 
     .hero-btns, .social-links {
@@ -544,12 +545,12 @@ h1, h2, h3, p, span, a {
         padding: 6px 12px;
     }
 
-    /* Hero — body padding already clears the nav, just add breathing room */
+    /* Hero — force-override the 900px rule above */
     .hero {
-        padding-top: 30px;
-        padding-bottom: 40px;
-        min-height: unset;
-        height: auto;
+        padding-top: 20px !important;
+        padding-bottom: 40px !important;
+        min-height: 0 !important;
+        height: auto !important;
         flex-direction: column-reverse;
         text-align: center;
         gap: 20px;
