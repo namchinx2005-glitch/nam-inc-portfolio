@@ -105,8 +105,8 @@ h1, h2, h3, p, span, a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 100vh;
-    padding: 120px 10% 60px 10%;
+    min-height: auto;
+    padding: 60px 10% 60px 10%;
     gap: 40px;
 }
 
@@ -343,7 +343,7 @@ h1, h2, h3, p, span, a {
    11. PAGE CONTAINER (inner pages)
    ============================================ */
 .page-container {
-    padding-top: 120px;
+    padding-top: 60px;
     min-height: 80vh;
     padding-inline: 10%;
 }
@@ -485,7 +485,7 @@ h1, h2, h3, p, span, a {
     .hero {
         flex-direction: column-reverse;
         text-align: center;
-        padding-top: 150px;
+        padding-top: 80px;
     }
 
     .hero-btns, .social-links {
