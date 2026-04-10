@@ -547,9 +547,12 @@ h1, h2, h3, p, span, a {
     /* Hero — body padding already clears the nav, just add breathing room */
     .hero {
         padding-top: 30px;
-        min-height: auto;
+        padding-bottom: 40px;
+        min-height: unset;
+        height: auto;
         flex-direction: column-reverse;
         text-align: center;
+        gap: 20px;
     }
 
     .hero-btns, .social-links {
