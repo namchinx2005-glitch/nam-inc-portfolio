@@ -462,15 +462,66 @@ h1, h2, h3, p, span, a {
     transition: 0.3s;
 }
 
+
+    /* --- MOBILE NAVIGATION FIX --- */
 @media (max-width: 700px) {
+    body {
+        /* This removes the big space by pushing the content 
+           exactly below the fixed navigation bar */
+        padding-top: 80px; 
+        overflow-x: hidden;
+    }
+
     .capsule-nav {
         top: 0;
         left: 0;
         right: 0;
-        transform: none;
+        transform: none; /* Removes the desktop centering */
         width: 100%;
         border-radius: 0;
+        position: fixed; /* Fixes it to the very top */
+        z-index: 1000;
+        border-bottom: 1px solid var(--nav-border);
     }
+
+    .nav-container {
+        padding: 10px 20px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Reset margins for the main content areas */
+    .page-container, 
+    .hero-section, 
+    main {
+        margin-top: 0 !important;
+        padding-top: 10px;
+    }
+
+    /* Hamburger Menu Visibility */
+    #hamburger {
+        display: flex;
+    }
+
+    /* Navigation Links Menu */
+    #nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--nav-bg);
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 1px solid var(--nav-border);
+    }
+
+    #nav-links.open {
+        display: flex;
+    }
+}
 
     .nav-container {
         border-radius: 0;
